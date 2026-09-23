@@ -1,34 +1,31 @@
-# Privacy policy: ADV+ call outcome panel
+# Privacy policy: Call outcome panel
 
-Last updated 13 September 2026.
+Last updated 23 September 2026.
 
 ## What this is
 
-ADV+ call outcome panel is a private browser extension used by the people on
-one call desk to log the outcome of outbound calls in one CRM, at
+Call outcome panel is a private browser extension used by the people on one
+call desk to log the outcome of outbound calls in one CRM, at
 `crm.advplus.ae`, and to see whether the workplace a lead has given is open
 right now. It is private and is installed only by named testers.
 
-## What it collects
+## What it handles
 
-**Nothing.** The extension has no server, no analytics and no telemetry. It
+The extension handles personal data belonging to other people, on the
+operator's own machine. It has no server, no analytics and no telemetry. It
 makes no network request of its own, and it sends no data to the developer or
-to any third party.
-
-## What it handles, and where that stays
-
-The extension does work with personal data belonging to other people, on the
-operator's own machine. Being clear about that matters more than the fact that
-none of it is collected.
+to any third party. Two things leave the machine, described below, and both
+happen only when the operator presses a button.
 
 - It reads the lead name, phone number and work email address that the CRM is
   already displaying on the page, so it can fill in a call comment, label a
   callback, and name the workplace it recognises from the email address.
-- It writes call comments and activity entries back to that CRM, using the
-  CRM's own controls, when the operator presses a button.
-- It keeps the calls logged since the last export, and the operator's own panel
-  settings (whether the panel is showing, the area last typed, and one
-  preference set on its options page, whose desk this profile is), in
+- It writes to that CRM, using the CRM's own controls, when the operator
+  presses a button: a call comment, an activity, the follow up date and
+  status, and the record's Step.
+- It keeps the calls logged since the last export, a marker for a call that is
+  being logged at that moment, the time and file name of the last export, and
+  one preference set on its options page (whose desk this profile is), in
   `chrome.storage.local` on that machine. It does not use
   `chrome.storage.sync`, so nothing is replicated to a Google account or to any
   other device.
@@ -38,17 +35,23 @@ none of it is collected.
 - The operator can export the logged calls to a file, which is written to their
   own downloads folder and goes nowhere else.
 
-## The one thing that leaves the machine
+## The two things that leave the machine
 
 When the operator chooses an outcome that books an agreed callback, the
 extension opens a new browser tab at Google Calendar's own event creation page
 with the event details already filled in. The event title contains the lead's
-phone number and name, so the diary entry is usable.
+phone number and name, so the diary entry is usable. Those details reach Google
+Calendar, in the operator's own account, at the moment the operator asks for
+that event and only then. The extension does not save the event; the operator
+does.
 
-That means those details reach Google Calendar, in the operator's own account,
-at the moment the operator asks for that event and only then. The extension
-does not save the event; the operator does. No other request is made to any
-other service.
+When the operator presses WhatsApp, the extension opens a new browser tab at
+`wa.me`, WhatsApp's own click to chat address, with the lead's phone number in
+the address and the lead's name in the message box. Those details reach
+WhatsApp at the moment the operator asks for that chat and only then. The
+extension does not send the message; the operator does.
+
+No other request is made to any other service.
 
 ## Permissions
 
@@ -69,7 +72,9 @@ for anyone to delete.
 
 No data is sold, shared, or transferred to any third party. No data is used for
 advertising, credit assessment or lending. No data is used for any purpose
-beyond logging a call on the record in front of the operator.
+beyond logging a call on the record in front of the operator. The use of this
+data complies with the Chrome Web Store User Data Policy, including the Limited
+Use requirements.
 
 ## Changes
 
