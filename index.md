@@ -1,6 +1,6 @@
 # Privacy policy: Call outcome panel
 
-Last updated 23 September 2026.
+Last updated 25 September 2026.
 
 ## What this is
 
@@ -14,8 +14,8 @@ right now. It is private and is installed only by named testers.
 The extension handles personal data belonging to other people, on the
 operator's own machine. It has no server, no analytics and no telemetry. It
 makes no network request of its own, and it sends no data to the developer or
-to any third party. Two things leave the machine, described below, and both
-happen only when the operator presses a button.
+to any third party. One thing leaves the machine, described below, and it
+happens only when the operator presses a button.
 
 - It reads the lead name, phone number and work email address that the CRM is
   already displaying on the page, so it can fill in a call comment, label a
@@ -29,13 +29,17 @@ happen only when the operator presses a button.
   `chrome.storage.local` on that machine. It does not use
   `chrome.storage.sync`, so nothing is replicated to a Google account or to any
   other device.
+- It opens the lead's own member profile on the same CRM in a new tab when
+  the operator presses Membership, and on a member profile the linked partner
+  or main member. Every member profile is on the site the panel already runs
+  on, so nothing is sent anywhere new.
 - On one desk it can put a follow-up message on the clipboard with the lead's
   first name and workplace filled in, for the operator to paste into a chat
   they send themselves. The extension sends nothing; the clipboard is local.
 - The operator can export the logged calls to a file, which is written to their
   own downloads folder and goes nowhere else.
 
-## The two things that leave the machine
+## The one thing that leaves the machine
 
 When the operator chooses an outcome that books an agreed callback, the
 extension opens a new browser tab at Google Calendar's own event creation page
@@ -44,12 +48,6 @@ phone number and name, so the diary entry is usable. Those details reach Google
 Calendar, in the operator's own account, at the moment the operator asks for
 that event and only then. The extension does not save the event; the operator
 does.
-
-When the operator presses WhatsApp, the extension opens a new browser tab at
-`wa.me`, WhatsApp's own click to chat address, with the lead's phone number in
-the address and the lead's name in the message box. Those details reach
-WhatsApp at the moment the operator asks for that chat and only then. The
-extension does not send the message; the operator does.
 
 No other request is made to any other service.
 
