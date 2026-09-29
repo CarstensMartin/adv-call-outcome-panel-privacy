@@ -1,6 +1,6 @@
 # Privacy policy: Call outcome panel
 
-Last updated 25 September 2026.
+Last updated 30 September 2026.
 
 ## What this is
 
@@ -17,14 +17,20 @@ makes no network request of its own, and it sends no data to the developer or
 to any third party. One thing leaves the machine, described below, and it
 happens only when the operator presses a button.
 
-- It reads the lead name, phone number and work email address that the CRM is
+- It reads the lead name, phone number (and a second number when the contact
+  field holds two), work email address and membership number that the CRM is
   already displaying on the page, so it can fill in a call comment, label a
-  callback, and name the workplace it recognises from the email address.
+  callback, name the workplace it recognises from the email address, and open
+  the lead's member profile.
+- When the operator presses Number, No. 2 or Name, it copies the lead's phone
+  number, second number or name to the operator's own clipboard, for their
+  dialler. The clipboard is local.
 - It writes to that CRM, using the CRM's own controls, when the operator
   presses a button: a call comment, an activity, the follow up date and
   status, and the record's Step.
-- It keeps the calls logged since the last export, a marker for a call that is
-  being logged at that moment, the time and file name of the last export, and
+- It keeps the calls logged since the last export, the calls an export has
+  taken and not yet confirmed as saved, the time and file name of the last
+  export, and
   one preference set on its options page (whose desk this profile is), in
   `chrome.storage.local` on that machine. It does not use
   `chrome.storage.sync`, so nothing is replicated to a Google account or to any
@@ -35,7 +41,8 @@ happens only when the operator presses a button.
   on, so nothing is sent anywhere new.
 - On one desk it can put a follow-up message on the clipboard with the lead's
   first name and workplace filled in, for the operator to paste into a chat
-  they send themselves. The extension sends nothing; the clipboard is local.
+  they send themselves, and the location of a guide file on that machine. The
+  extension sends nothing; the clipboard is local.
 - The operator can export the logged calls to a file, which is written to their
   own downloads folder and goes nowhere else.
 
@@ -44,7 +51,9 @@ happens only when the operator presses a button.
 When the operator chooses an outcome that books an agreed callback, the
 extension opens a new browser tab at Google Calendar's own event creation page
 with the event details already filled in. The event title contains the lead's
-phone number and name, so the diary entry is usable. Those details reach Google
+phone number and name, so the diary entry is usable; the description carries
+the callback time on both clocks, and the location field carries the place the
+operator typed for the lead, if they typed one. Those details reach Google
 Calendar, in the operator's own account, at the moment the operator asks for
 that event and only then. The extension does not save the event; the operator
 does.
@@ -63,8 +72,10 @@ No other request is made to any other service.
 
 Everything the extension stores is in the browser profile on the operator's
 machine. Removing the extension, or clearing its site data from
-`chrome://extensions`, deletes all of it. There is nothing held anywhere else
-for anyone to delete.
+`chrome://extensions`, deletes all of it. An exported file is the operator's
+own file in their downloads folder: removing the extension does not delete it,
+and the operator deletes it like any other file of theirs. Nothing is held
+anywhere else for anyone to delete.
 
 ## Selling and sharing
 
