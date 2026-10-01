@@ -14,7 +14,7 @@ right now. It is private and is installed only by named testers.
 The extension handles personal data belonging to other people, on the
 operator's own machine. It has no server, no analytics and no telemetry. It
 makes no network request of its own, and it sends no data to the developer or
-to any third party. One thing leaves the machine, described below, and it
+to any third party. Two things leave the machine, described below, and each
 happens only when the operator presses a button.
 
 - It reads the lead name, phone number (and a second number when the contact
@@ -30,8 +30,9 @@ happens only when the operator presses a button.
   status, and the record's Step.
 - It keeps the calls logged since the last export, the calls an export has
   taken and not yet confirmed as saved, the time and file name of the last
-  export, and
-  one preference set on its options page (whose desk this profile is), in
+  export, one preference set on its options page (whose desk this profile
+  is), and for at most two minutes the one contact the Add WA button is
+  handing to WhatsApp Web, deleted the moment it is read, in
   `chrome.storage.local` on that machine. It does not use
   `chrome.storage.sync`, so nothing is replicated to a Google account or to any
   other device.
@@ -46,7 +47,7 @@ happens only when the operator presses a button.
 - The operator can export the logged calls to a file, which is written to their
   own downloads folder and goes nowhere else.
 
-## The one thing that leaves the machine
+## What leaves the machine
 
 When the operator chooses an outcome that books an agreed callback, the
 extension opens a new browser tab at Google Calendar's own event creation page
@@ -57,6 +58,16 @@ operator typed for the lead, if they typed one. Those details reach Google
 Calendar, in the operator's own account, at the moment the operator asks for
 that event and only then. The extension does not save the event; the operator
 does.
+
+On a desk where the operator has allowed it on the options page, the Add WA
+button opens WhatsApp Web in a new tab and fills its New contact form with the
+lead's first name, a last name carrying their company or the word B2C, and the
+lead's phone number. Those details reach WhatsApp, in the operator's own
+account, at the moment the operator presses Add WA and only then. The contact
+is held in local storage for at most two minutes and deleted as soon as
+WhatsApp Web reads it. The extension does not save the contact; the operator
+does. An install that never allows the WhatsApp Web permission never runs
+anything on WhatsApp.
 
 No other request is made to any other service.
 
