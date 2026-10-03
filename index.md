@@ -14,7 +14,7 @@ right now. It is private and is installed only by named testers.
 The extension handles personal data belonging to other people, on the
 operator's own machine. It has no server, no analytics and no telemetry. It
 makes no network request of its own, and it sends no data to the developer or
-to any third party. Two things leave the machine, described below, and each
+to any third party. Three things leave the machine, described below, and each
 happens only when the operator presses a button.
 
 - It reads the lead name, phone number (and a second number when the contact
@@ -32,8 +32,10 @@ happens only when the operator presses a button.
   taken and not yet confirmed as saved, the time and file name of the last
   export, one preference set on its options page (whose desk this profile
   is), and for at most two minutes the one contact the Add WA button is
-  handing to WhatsApp Web, deleted the moment it is read, in
-  `chrome.storage.local` on that machine. It does not use
+  handing to WhatsApp Web, deleted the moment it is read, and a small log of
+  any WhatsApp Web page element the Add WA script could not find, with how
+  many times and when, and the time the Add WA script last found its WhatsApp
+  registration out of date after an update, in `chrome.storage.local` on that machine. It does not use
   `chrome.storage.sync`, so nothing is replicated to a Google account or to any
   other device.
 - It opens the lead's own member profile on the same CRM in a new tab when
@@ -68,6 +70,12 @@ is held in local storage for at most two minutes and deleted as soon as
 WhatsApp Web reads it. The extension does not save the contact; the operator
 does. An install that never allows the WhatsApp Web permission never runs
 anything on WhatsApp.
+
+On a desk set up with a Google Drive folder, the guide buttons open that
+desk's own Google Drive folder in a new tab instead of copying a file path.
+The address carries only the folder's id, which is baked into the extension
+for that desk; no lead detail is in it, and nothing is uploaded. A desk
+without a Google Drive folder never opens one.
 
 No other request is made to any other service.
 
