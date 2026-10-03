@@ -1,6 +1,6 @@
 # Privacy policy: Call outcome panel
 
-Last updated 30 September 2026.
+Last updated 3 October 2026.
 
 ## What this is
 
@@ -22,6 +22,11 @@ happens only when the operator presses a button.
   already displaying on the page, so it can fill in a call comment, label a
   callback, name the workplace it recognises from the email address, and open
   the lead's member profile.
+- It also reads the lead's tags, its lead-source label and the CRM's own
+  System comment line naming the partner company, on the page the operator
+  already has open, to tell a partner lead from any other and to name the
+  company. The company is kept only in the day's call log on the operator's
+  machine, and is sent nowhere.
 - When the operator presses Number, No. 2 or Name, it copies the lead's phone
   number, second number or name to the operator's own clipboard, for their
   dialler. The clipboard is local.
