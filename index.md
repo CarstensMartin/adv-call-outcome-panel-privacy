@@ -35,14 +35,19 @@ happens only when the operator presses a button.
   status, and the record's Step.
 - It keeps the calls logged since the last export, the calls an export has
   taken and not yet confirmed as saved, the time and file name of the last
-  export, one preference set on its options page (whose desk this profile
-  is), and for at most two minutes the one contact the Add WA button is
+  export, two preferences set on its options page (whose desk this profile
+  is, and the operator's own coupon code for a promotion message they copy),
+  and for at most two minutes the one contact the Add WA button is
   handing to WhatsApp Web, deleted the moment it is read, and a small log of
   any WhatsApp Web page element the Add WA script could not find, with how
   many times and when, and the time the Add WA script last found its WhatsApp
   registration out of date after an update, in `chrome.storage.local` on that machine. It does not use
   `chrome.storage.sync`, so nothing is replicated to a Google account or to any
   other device.
+- It keeps, in the CRM tab's own session storage, the name of the pipeline
+  last chosen on the leads list (B2C, for example), so the Refresh button can
+  pick it again after it returns to the list. The browser clears session
+  storage when the tab is closed.
 - It opens the lead's own member profile on the same CRM in a new tab when
   the operator presses Membership, and on a member profile the linked partner
   or main member. Every member profile is on the site the panel already runs
