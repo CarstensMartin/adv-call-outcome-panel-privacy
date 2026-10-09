@@ -36,7 +36,7 @@ happens only when the operator presses a button.
 - It keeps the calls logged since the last export, the calls an export has
   taken and not yet confirmed as saved, the time and file name of the last
   export, two preferences set on its options page (whose desk this profile
-  is, and the operator's own coupon code for a promotion message they copy),
+  is, and the operator's own coupon code for a promotion message they copy, and each client's coupon code for that client's deal welcome),
   and for at most two minutes the one contact the Add WA button is
   handing to WhatsApp Web, deleted the moment it is read, and a small log of
   any WhatsApp Web page element the Add WA script could not find, with how
