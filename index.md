@@ -106,7 +106,8 @@ operator presses a button.
 
 ## What leaves the machine
 
-When the operator chooses an outcome that books an agreed callback, the
+When the operator chooses an outcome that books an agreed callback, or presses
+the Calendar button beside it for the follow up that outcome set, the
 extension opens a new browser tab at Google Calendar's own event creation page
 with the event details already filled in. The event title contains the lead's
 phone number and name, so the diary entry is usable; the description carries
